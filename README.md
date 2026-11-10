@@ -1,38 +1,36 @@
-# Minhas Tarefas
+# 📝 Minhas Tarefas (To-Do List)
 
-Lista de tarefas bem básica feita com Node.js, Express e JavaScript puro.
-As tarefas ficam salvas no arquivo `tarefas.json` (não precisa de banco de dados).
+Uma aplicação de gerenciamento de tarefas ágil e moderna. Construída com um backend em Node.js e uma interface renovada utilizando **Dark Mode** e efeitos de **Glassmorphism** com JavaScript puro.
 
-## Como rodar
+Os dados são persistidos localmente em um arquivo `tarefas.json`, tornando o projeto leve, rápido e sem dependência de bancos de dados externos. Ideal para estudos, testes rápidos e uso pessoal.
 
-```bash
-npm install
-npm run dev
-```
+---
 
-Abra http://localhost:3000
+## ✨ Funcionalidades
 
-O `npm run dev` reinicia o servidor sozinho quando você altera o código.
-Para rodar sem reinício automático, use `npm start`.
+- **Design Moderno:** Interface escura com desfoque (Glassmorphism) e responsividade.
+- **Gerenciamento Completo:** Crie, marque como concluída, desmarque ou exclua tarefas.
+- **Contador Dinâmico:** Acompanhe em tempo real quantas tarefas ainda estão pendentes.
+- **Persistência Local:** Feche o navegador e não perca nada (salvo via API no backend).
+- **Feedback Visual:** Animações suaves e estados vazios ("empty states") amigáveis.
 
-## Rotas da API
+---
 
-| Método | Rota               | O que faz                    |
-| ------ | ------------------ | ---------------------------- |
-| GET    | `/api/tarefas`     | Lista as tarefas             |
-| POST   | `/api/tarefas`     | Cria uma tarefa (`titulo`)   |
-| PUT    | `/api/tarefas/:id` | Marca como feita / desfaz    |
-| DELETE | `/api/tarefas/:id` | Exclui a tarefa              |
+## 🚀 Tecnologias Utilizadas
 
-## Estrutura
+**Frontend**
+- HTML5 semântico
+- CSS3 (Variáveis, Flexbox, Glassmorphism, SVGs inline)
+- Vanilla JavaScript (Fetch API, Async/Await, manipulação do DOM)
 
-```
-lista-tarefas/
-├── public/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-├── server.js
-├── package.json
-└── README.md
-```
+**Backend**
+- [Node.js](https://nodejs.org/)
+- Express.js
+- Sistema de arquivos local (`fs` module para o `tarefas.json`)
+- Nodemon (ambiente de desenvolvimento)
+
+---
+
+## ⚙️ Pré-requisitos e Instalação
+
+Certifique-se de ter o **Node.js** (v14 ou superior) instalado em sua máquina.

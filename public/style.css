@@ -4,109 +4,176 @@
   padding: 0;
 }
 
+:root {
+  --bg-color: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  background: #f4f1ea;
-  color: #2b2b2b;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: var(--text-main);
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 48px 16px;
+  align-items: flex-start;
+  padding: 60px 20px;
 }
 
 .caixa {
   width: 100%;
-  max-width: 480px;
+  max-width: 500px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+header {
+  margin-bottom: 24px;
 }
 
 h1 {
-  font-size: 1.8rem;
-  margin-bottom: 4px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, #a5b4fc, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
 }
 
 .contador {
-  color: #777;
-  font-size: 0.9rem;
-  margin-bottom: 20px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 form {
   display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
 input[type='text'] {
   flex: 1;
-  padding: 12px 14px;
-  border: 2px solid #ddd6c8;
-  border-radius: 8px;
-  background: #fff;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--text-main);
   font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+input[type='text']::placeholder {
+  color: #64748b;
 }
 
 input[type='text']:focus {
   outline: none;
-  border-color: #d9672b;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
 button[type='submit'] {
-  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
   border: none;
-  border-radius: 8px;
-  background: #d9672b;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
   color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button[type='submit']:hover {
-  background: #bf5821;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4);
 }
 
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 li {
   display: flex;
   align-items: center;
-  gap: 12px;
-  background: #fff;
-  padding: 12px 14px;
-  border-radius: 8px;
-  margin-bottom: 8px;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(4px);
 }
 
 li input[type='checkbox'] {
-  width: 20px;
-  height: 20px;
-  accent-color: #d9672b;
+  width: 22px;
+  height: 22px;
+  accent-color: var(--accent);
   cursor: pointer;
+  border-radius: 6px;
 }
 
 li span {
   flex: 1;
   word-break: break-word;
+  font-size: 1.05rem;
+  transition: color 0.2s ease;
 }
 
 li.feita span {
   text-decoration: line-through;
-  color: #aaa;
+  color: var(--text-muted);
 }
 
 li .excluir {
-  background: none;
+  background: rgba(239, 68, 68, 0.1);
   border: none;
-  color: #b33;
-  font-size: 1.2rem;
+  color: var(--danger);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+li .excluir:hover {
+  background: var(--danger);
+  color: #fff;
 }
 
 .vazio {
   text-align: center;
-  color: #888;
-  margin-top: 24px;
+  padding: 40px 0;
+  color: var(--text-muted);
+}
+
+.vazio-icone {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  opacity: 0.8;
 }
